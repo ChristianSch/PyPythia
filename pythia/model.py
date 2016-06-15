@@ -3,7 +3,11 @@ import urlparse
 
 from api_base import ApiBase
 
+
 class Model(ApiBase):
+    """
+    This class abstracts the models an experiment has.
+    """
     experiment_id = None
     _attributes = ['_hyperparameter', '_name', '_description', 'date_added']
     measurements = []
@@ -43,17 +47,28 @@ class Model(ApiBase):
             })
 
     def __init__(self, api_base, experiment_id, _id=None):
+        """
+        Returns new `Model` instance.
+
+        @param api_base full URL to api instance including the version
+            identifier. Example: `http://localhost:5667/api/v1`
+        @param experiment_id the id of the experiment that owns the model
+        @param _id id of an already existing model. If not set a new model is
+            created.
+        """
         self.experiment_id = experiment_id
         ApiBase.__init__(self, api_base, _id=_id)
 
     def _resource_path(self):
         assert(self.experiment_id)
-        return self._join_url(self.api_base, 'experiment', self.experiment_id,
-            'model', self._id or '')
+        return self._join_url(self.api_base,
+                              'experiment',
+                              self.experiment_id,
+                              'model', self._id or '')
 
-    def add_metric(self, name, value, epoch=0, step=0):
+    def add_measurement(self, name, value, epoch=0, step=0):
         """
-        Adds measurement point to the model.
+        Adds data point of a measurement with respect to a metric to the model.
 
         @param name name of metric
         @param value value of respective metric
@@ -68,4 +83,4 @@ class Model(ApiBase):
             'step': step
         })
 
-        self.measurements.push(res.json())
+        self.measurements.append(res.json())
