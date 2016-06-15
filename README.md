@@ -29,7 +29,7 @@ for i in range(NUM_EPOCHS):
                               value=train_accuracy,
                               step=j,
                               epoch=i)
-"""
+```
 
 ## Examples
 * [MNIST ConvNet in Tensorflow](https://github.com/ChristianSch/PyPythia/blob/master/examples/Tensorflow%20MNIST.ipynb)
