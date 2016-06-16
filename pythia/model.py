@@ -76,7 +76,7 @@ class Model(ApiBase):
         @param step respective step of the measurement point
         """
         url = self._join_url(self._resource_path(), 'measurements')
-        res = requests.put(url, data={
+        res = requests.post(url, data={
             'name': name,
             'value': value,
             'epoch': epoch,
