@@ -84,3 +84,6 @@ class Model(ApiBase):
         })
 
         self.measurements.append(res.json())
+
+    def __str__(self):
+        return self._name

@@ -37,3 +37,6 @@ class Experiment(ApiBase):
 
     def create_model(self, _id=None):
         return Model(self.api_base, self._id, _id=_id)
+
+    def __str__(self):
+        return self._name
