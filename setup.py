@@ -1,8 +1,10 @@
 from setuptools import setup
 
 setup(
-    name='pythia',
-    version='0.0.1',
+    name='pypythia',
+    packages=['pypythia'],
+    license='MIT',
+    version='0.0.3',
     author='Christian Schulze',
     author_email='chris@andinfinity.de',
     url='https://github.com/ChristianSch/PyPythia'
