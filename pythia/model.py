@@ -13,8 +13,8 @@ class Model(ApiBase):
     measurements = []
 
     @property
-    def hyperparameters(self):
-        return self._hyperparameters
+    def hyperparameter(self):
+        return self._hyperparameter
 
     @property
     def name(self):
@@ -24,11 +24,13 @@ class Model(ApiBase):
     def description(self):
         return self._description
 
-    @hyperparameters.setter
-    def description(self, value):
+    @hyperparameter.setter
+    def hyperparameter(self, value):
         if value:
-            self._hyperparameters = value
-            self.update
+            self._hyperparameter = value
+            self._update_self({
+                'hyperparameter': value
+            })
 
     @name.setter
     def name(self, value):
