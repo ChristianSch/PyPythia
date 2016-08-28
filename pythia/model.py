@@ -48,13 +48,12 @@ class Model(ApiBase):
 
     def __init__(self, api_base, experiment_id, _id=None):
         """
-        Returns new `Model` instance.
+        Returns new ``Model`` instance.
 
-        @param api_base full URL to api instance including the version
-            identifier. Example: `http://localhost:5667/api/v1`
-        @param experiment_id the id of the experiment that owns the model
-        @param _id id of an already existing model. If not set a new model is
-            created.
+        :param api_base: full URL to api instance including the version
+            identifier. Example: ``http://localhost:5667/api/v1``
+        :param experiment_id: the id of the experiment that owns the model
+        :param _id: if given, attempts to fetch an already existing model.
         """
         self.experiment_id = experiment_id
         ApiBase.__init__(self, api_base, _id=_id)
@@ -70,10 +69,10 @@ class Model(ApiBase):
         """
         Adds data point of a measurement with respect to a metric to the model.
 
-        @param name name of metric
-        @param value value of respective metric
-        @param epoch respective epoch of the measurement point
-        @param step respective step of the measurement point
+        :param name: name of metric
+        :param value: value of respective metric
+        :param epoch: respective epoch of the measurement point
+        :param step: respective step of the measurement point
         """
         url = self._join_url(self._resource_path(), 'measurements')
         res = requests.post(url, data={

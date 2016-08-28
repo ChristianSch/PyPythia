@@ -6,6 +6,9 @@ from model import Model
 
 
 class Experiment(ApiBase):
+    """
+    This class represents an experiment with an arbritary number of models.
+    """
     _attributes = ['_name', '_description', 'date_added']
 
     @property
@@ -36,6 +39,11 @@ class Experiment(ApiBase):
         return self._join_url(self.api_base, 'experiment', self._id or '')
 
     def create_model(self, _id=None):
+        """
+        Creates a new model.
+
+        :param _id: if given, attempts to fetch an already existing model.
+        """
         return Model(self.api_base, self._id, _id=_id)
 
     def __str__(self):
