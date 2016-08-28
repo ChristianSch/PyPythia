@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Pythia'
+project = u'PyPythia'
 copyright = u'2016, Christian Schulze'
 
 # The version info for the project you're documenting, acts as replacement for
