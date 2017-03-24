@@ -103,7 +103,7 @@ class ApiBase(object):
         Checks the API version to guarantee compatibility.
         """
         res = requests.get(self.api_base)
-        assert("v1" in res.text)
+        assert "v1" in res.text, "incompatible or missing API version"
 
     def _resource_path(self):
         """
