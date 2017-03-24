@@ -1,5 +1,5 @@
 # PyPythia [![Build Status](https://travis-ci.org/ChristianSch/PyPythia.svg?branch=master)](https://travis-ci.org/ChristianSch/PyPythia)
-Python library for the Pythia platform.
+Python library for the Pythia platform. Supports Python `2.7`, `3.5` and `3.6`.
 
 ## Installation
 You can fetch the `pypythia module via pip::
