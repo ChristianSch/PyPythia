@@ -2,7 +2,7 @@
 Python library for the Pythia platform. Supports Python `2.7`, `3.5` and `3.6`.
 
 ## Installation
-You can fetch the `pypythia module via pip::
+You can fetch the `pypythia` module via pip::
 ```
 pip install pypythia
 ```
