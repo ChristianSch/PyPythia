@@ -1,4 +1,4 @@
-# PyPythia
+# PyPythia [![Build Status](https://travis-ci.org/ChristianSch/PyPythia.svg?branch=master)](https://travis-ci.org/ChristianSch/PyPythia)
 Python library for the Pythia platform.
 
 ## Installation
