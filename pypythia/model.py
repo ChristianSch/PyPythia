@@ -1,7 +1,6 @@
 import requests
-import urlparse
 
-from apibase import ApiBase
+from .apibase import ApiBase
 
 
 class Model(ApiBase):

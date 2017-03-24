@@ -1,8 +1,7 @@
 import requests
-import urlparse
 
-from apibase import ApiBase
-from model import Model
+from .apibase import ApiBase
+from .model import Model
 
 
 class Experiment(ApiBase):
